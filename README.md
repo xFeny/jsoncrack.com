@@ -20,10 +20,10 @@ forked from [AykutSarac/jsoncrack.com](https://github.com/AykutSarac/jsoncrack.c
 
 ### 步骤
 
-1. 克隆项目
+1. 克隆项目(或 fork https://github.com/AykutSarac/jsoncrack.com/fork).
 
    ```sh
-   git clone https://github.com/xFeny/jsoncrack.com.git
+   git clone https://github.com/AykutSarac/jsoncrack.com.git
    ```
 
 2. 转到项目文件夹
