@@ -160,10 +160,10 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
       <Divider my="xs" />
       <Group justify="right">
         <Button leftSection={<FiCopy />} onClick={clipboardImage}>
-        复制
+          复制
         </Button>
         <Button color="green" leftSection={<FiDownload />} onClick={exportAsImage}>
-        下载
+          下载
         </Button>
       </Group>
     </Modal>

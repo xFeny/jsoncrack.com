@@ -51,7 +51,7 @@ export const FullscreenDropzone = () => {
             无效的文件
           </Text>
           <Text fz="lg" c="dimmed" mt="sm">
-          允许的格式有 JSON、YAML、CSV、XML、TOML
+            允许的格式有 JSON、YAML、CSV、XML、TOML
           </Text>
         </Dropzone.Reject>
       </Group>

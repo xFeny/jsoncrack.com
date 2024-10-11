@@ -3,13 +3,7 @@ import { Flex, Popover, Text } from "@mantine/core";
 import styled from "styled-components";
 import { event as gaEvent } from "nextjs-google-analytics";
 import { BiSolidDockLeft } from "react-icons/bi";
-import {
-  VscCheck,
-  VscError,
-  VscRunAll,
-  VscSync,
-  VscSyncIgnored,
-} from "react-icons/vsc";
+import { VscCheck, VscError, VscRunAll, VscSync, VscSyncIgnored } from "react-icons/vsc";
 import useGraph from "src/containers/Editor/components/views/GraphView/stores/useGraph";
 import useConfig from "src/store/useConfig";
 import useFile from "src/store/useFile";

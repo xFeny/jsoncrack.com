@@ -25,15 +25,22 @@ export const NodeModal = ({ opened, onClose }: ModalProps) => {
       <Stack py="sm" gap="sm">
         <Stack gap="xs">
           <Text fz="xs" fw={500}>
-          内容
+            内容
           </Text>
           <ScrollArea.Autosize mah={250} maw={600}>
-            <CodeHighlight 
-              code={nodeData} miw={350} maw={600} language="json" copyLabel="复制" copiedLabel="复制成功" withCopyButton />
+            <CodeHighlight
+              code={nodeData}
+              miw={350}
+              maw={600}
+              language="json"
+              copyLabel="复制"
+              copiedLabel="复制成功"
+              withCopyButton
+            />
           </ScrollArea.Autosize>
         </Stack>
         <Text fz="xs" fw={500}>
-        节点路径
+          节点路径
         </Text>
         <ScrollArea.Autosize maw={600}>
           <CodeHighlight

@@ -133,7 +133,7 @@ export const ViewMenu = () => {
               {graphCollapsed ? "展开" : "折叠"} 节点
             </Menu.Item>
             <Menu.Item fz={12} onClick={focusFirstNode} leftSection={<VscTarget />}>
-            聚焦到第一个节点
+              聚焦到第一个节点
             </Menu.Item>
           </>
         )}
