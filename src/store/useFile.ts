@@ -167,22 +167,16 @@ const useFile = create<FileStates & JsonActions>()((set, get) => ({
   setHasChanges: hasChanges => set({ hasChanges }),
   fetchUrl: async url => {
     try {
-      let jsonStr = "";
-      if (isURL(url)) {
-        const res = await axios.post(
-          "https://fetch-api.feny.ink/httpRequest",
-          { url: url },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        jsonStr = JSON.stringify(res.data, null, 2);
-      } else {
-        const json = JSON.parse(url);
-        jsonStr = JSON.stringify(json, null, 2);
-      }
+      const res = await axios.post(
+        "https://fetch-api.feny.ink/httpRequest",
+        { url: url },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const jsonStr = JSON.stringify(res.data, null, 2);
 
       get().setContents({ contents: jsonStr });
       return useJson.setState({ json: jsonStr, loading: false });
@@ -193,8 +187,7 @@ const useFile = create<FileStates & JsonActions>()((set, get) => ({
   },
   checkEditorSession: (url, widget) => {
     if (url && typeof url === "string") {
-      // if (isURL(url))
-      return get().fetchUrl(url);
+      if (isURL(url)) return get().fetchUrl(url);
     }
 
     let contents = defaultJson;
