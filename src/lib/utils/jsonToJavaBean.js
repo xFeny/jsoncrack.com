@@ -1,5 +1,6 @@
 /**
  * JSON 转Java实体
+ * Copyright https://www.bejson.com
  */
 
 function trimStr(str) {
@@ -12,9 +13,6 @@ function isArray(o) {
 
 function camelCase(input) {
   return input;
-  /* return input.toLowerCase().replace(/_(.)/g, function(match, group1) {
-	     return group1.toUpperCase();
-	 });*/
 }
 
 function camelCaseWithFirstCharUpper(input) {
@@ -34,6 +32,9 @@ function isInt(n) {
   return n % 1 === 0;
 }
 
+/**
+ * 合并数组
+ */
 function merge(first, second) {
   var l = second.length,
     i = first.length,
