@@ -20,12 +20,12 @@ export const JQModal = ({ opened, onClose }: ModalProps) => {
             href="https://jqlang.github.io/jq/manual/"
             rel="noreferrer"
           >
-            阅读文档。 <VscLinkExternal />
+            阅读文档。<VscLinkExternal />
           </Anchor>
         </Text>
         <TextInput
           leftSection="jq"
-          placeholder="Enter jq query"
+          placeholder="输入 jq query"
           value={query}
           onChange={e => setQuery(e.currentTarget.value)}
         />

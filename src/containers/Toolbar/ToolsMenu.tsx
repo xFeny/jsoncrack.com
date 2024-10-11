@@ -68,16 +68,6 @@ export const ToolsMenu = () => {
         </Menu.Item>
         <Menu.Item
           fz={12}
-          leftSection={<VscJson />}
-          onClick={() => {
-            setVisible("schema")(true);
-            gaEvent("open_schema_modal");
-          }}
-        >
-          JSON Schema
-        </Menu.Item>
-        <Menu.Item
-          fz={12}
           leftSection={<MdFilterListAlt />}
           onClick={() => {
             setVisible("jpath")(true);
@@ -107,42 +97,9 @@ export const ToolsMenu = () => {
         >
           生成类型
         </Menu.Item>
-        {/* <Menu.Item fz={12} leftSection={<FaRandom />} onClick={randomizeData}>
-          Randomize Data
+        <Menu.Item fz={12} leftSection={<FaRandom />} onClick={randomizeData}>
+          随机数据
         </Menu.Item>
-        <Menu.Item
-          fz={12}
-          leftSection={<LuGlobe />}
-          rightSection={<VscLock />}
-          onClick={() => {
-            setVisible("upgrade")(true);
-            gaEvent("rest_client_modal");
-          }}
-        >
-          REST Client
-        </Menu.Item>
-        <Menu.Item
-          fz={12}
-          leftSection={<FaWandMagicSparkles />}
-          rightSection={<VscLock />}
-          onClick={() => {
-            setVisible("upgrade")(true);
-            gaEvent("open_ai_filter_modal");
-          }}
-        >
-          AI-Powered Filter
-        </Menu.Item>
-        <Menu.Item
-          fz={12}
-          leftSection={<MdCompare />}
-          rightSection={<VscLock />}
-          onClick={() => {
-            setVisible("upgrade")(true);
-            gaEvent("open_compare_data_modal");
-          }}
-        >
-          Compare Data
-        </Menu.Item> */}
       </Menu.Dropdown>
     </Menu>
   );

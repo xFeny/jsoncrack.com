@@ -121,7 +121,7 @@ export const ViewMenu = () => {
               fz={12}
               onClick={() => {
                 toggleExpandCollapseGraph();
-                gaEvent("expand_collapse_graph", { label: graphCollapsed ? "展开 节点" : "折叠 节点" });
+                gaEvent("expand_collapse_graph", { label: graphCollapsed ? "展开" : "折叠" });
               }}
               leftSection={graphCollapsed ? <VscExpandAll /> : <VscCollapseAll />}
               rightSection={
@@ -130,10 +130,10 @@ export const ViewMenu = () => {
                 </Text>
               }
             >
-              {graphCollapsed ? "Expand" : "Collapse"} Graph
+              {graphCollapsed ? "展开" : "折叠"} 节点
             </Menu.Item>
             <Menu.Item fz={12} onClick={focusFirstNode} leftSection={<VscTarget />}>
-              聚焦到第一个节点
+            聚焦到第一个节点
             </Menu.Item>
           </>
         )}

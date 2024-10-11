@@ -143,15 +143,9 @@ export const BottomBar = () => {
         )}
       </StyledLeft>
 
-      {/* <StyledRight>
+      <StyledRight>
         <StyledBottomBarItem>Nodes: {nodeCount}</StyledBottomBarItem>
-        <Link href="https://github.com/AykutSarac/jsoncrack.com/discussions" target="_blank">
-          <StyledBottomBarItem>
-            <VscFeedback />
-            Feedback
-          </StyledBottomBarItem>
-        </Link>
-      </StyledRight> */}
+      </StyledRight>
     </StyledBottomBar>
   );
 };

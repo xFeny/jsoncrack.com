@@ -60,8 +60,8 @@ const EditorPage = () => {
       <NextSeo
         {...SEO}
         title="Editor | JSON Crack"
-        description="JSON Crack Editor is a tool for visualizing into graphs, analyzing, editing, formatting, querying, transforming and validating JSON, CSV, YAML, XML, and more."
-        canonical="https://jsoncrack.com/editor"
+        description="JSON Crack Editor 是一款用于将 JSON、CSV、YAML、XML 等可视化为图形，并对其进行分析、编辑、格式化、查询、转换和验证的工具。"
+        canonical="https://jsoncrack-com.feny.ink/editor"
       />
       <ThemeProvider theme={darkmodeEnabled ? darkTheme : lightTheme}>
         <QueryClientProvider client={queryClient}>

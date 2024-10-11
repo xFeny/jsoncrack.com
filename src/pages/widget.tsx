@@ -31,7 +31,7 @@ const GraphView = dynamic(
 const WidgetPage = () => {
   const { query, push, isReady } = useRouter();
   const { setColorScheme } = useMantineColorScheme();
-  const [theme, setTheme] = React.useState<"dark" | "light">("dark");
+  const [theme, setTheme] = React.useState<"dark" | "light">("light");
   const checkEditorSession = useFile(state => state.checkEditorSession);
   const setContents = useFile(state => state.setContents);
   const setDirection = useGraph(state => state.setDirection);
@@ -58,7 +58,7 @@ const WidgetPage = () => {
         setDirection(event.data.options?.direction || "RIGHT");
       } catch (error) {
         console.error(error);
-        toast.error("Invalid JSON!");
+        toast.error("无效的 JSON!");
       }
     };
 
@@ -74,7 +74,7 @@ const WidgetPage = () => {
     <>
       <NextSeo noindex nofollow />
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
-        <Toolbar isWidget />
+        <Toolbar />
         <GraphView isWidget />
       </ThemeProvider>
     </>
