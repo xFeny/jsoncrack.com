@@ -7,7 +7,10 @@ import { NextSeo } from "next-seo";
 import toast from "react-hot-toast";
 import { darkTheme, lightTheme } from "src/constants/theme";
 import useGraph from "src/containers/Editor/components/views/GraphView/stores/useGraph";
+import { TreeView } from "src/containers/Editor/components/views/TreeView";
 import { Toolbar } from "src/containers/Toolbar";
+import { ViewMode } from "src/enums/viewMode.enum";
+import useConfig from "src/store/useConfig";
 import useFile from "src/store/useFile";
 import type { LayoutDirection } from "src/types/graph";
 
@@ -70,12 +73,22 @@ const WidgetPage = () => {
     setColorScheme(theme);
   }, [setColorScheme, theme]);
 
+  const ModalController = dynamic(() => import("src/layout/ModalController"));
+  const View = () => {
+    const viewMode = useConfig(state => state.viewMode);
+
+    if (viewMode === ViewMode.Graph) return <GraphView />;
+    if (viewMode === ViewMode.Tree) return <TreeView />;
+    return null;
+  };
+
   return (
     <>
       <NextSeo noindex nofollow />
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+        <ModalController />
         <Toolbar />
-        <GraphView isWidget />
+        <View />
       </ThemeProvider>
     </>
   );
