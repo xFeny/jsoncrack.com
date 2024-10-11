@@ -29,8 +29,7 @@ export const JPathModal = ({ opened, onClose }: ModalProps) => {
   return (
     <Modal title="JSON Path" size="lg" opened={opened} onClose={onClose} centered>
       <Stack>
-        <Text fz="sm">
-          JsonPath 表达式总是以与 XPath 表达式相同的方式引用 JSON 结构。
+        <Text fz="sm">JsonPath 表达式总是以与 XPath 表达式相同的方式引用 JSON 结构。
           与 XML 文档结合使用一样。
           在中的&quot;root&quot;总是被称为 $，而不管它是对象还是数组。
           <br />

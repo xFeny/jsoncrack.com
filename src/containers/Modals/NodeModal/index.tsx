@@ -29,13 +29,7 @@ export const NodeModal = ({ opened, onClose }: ModalProps) => {
           </Text>
           <ScrollArea.Autosize mah={250} maw={600}>
             <CodeHighlight 
-              code={nodeData}
-              miw={350}
-              maw={600}
-              language="json"
-              copyLabel="复制"
-              copiedLabel="复制成功"
-              withCopyButton />
+              code={nodeData} miw={350} maw={600} language="json" copyLabel="复制" copiedLabel="复制成功" withCopyButton />
           </ScrollArea.Autosize>
         </Stack>
         <Text fz="xs" fw={500}>

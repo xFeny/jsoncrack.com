@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { Flex, Popover, Text } from "@mantine/core";
 import styled from "styled-components";
 import { event as gaEvent } from "nextjs-google-analytics";
@@ -7,7 +6,6 @@ import { BiSolidDockLeft } from "react-icons/bi";
 import {
   VscCheck,
   VscError,
-  VscFeedback,
   VscRunAll,
   VscSync,
   VscSyncIgnored,
@@ -111,7 +109,7 @@ export const BottomBar = () => {
                 <Flex align="center" gap={2}>
                   <VscError color="red" />
                   <Text c="red" fw={500} fz="xs">
-                  验证未通过
+                    验证未通过
                   </Text>
                 </Flex>
               </Popover.Target>

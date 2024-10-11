@@ -84,7 +84,7 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
               <AiOutlineUpload size={48} />
               <Text fw="bold">拖拽文件到此处或者点击上传文件</Text>
               <Text c="dimmed" fz="xs">
-              (最大不超过 500 Kb)
+                (最大不超过 500 Kb)
               </Text>
               <Text c="dimmed" fz="sm">
                 {file?.name ?? "None"}
@@ -95,7 +95,7 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
       </Stack>
       <Group justify="right">
         <Button onClick={handleImportFile} disabled={!(file || url)}>
-        导入
+          导入
         </Button>
       </Group>
     </Modal>
