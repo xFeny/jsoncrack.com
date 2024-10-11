@@ -11,6 +11,7 @@ enum Language {
   Go = "go",
   JSON_SCHEMA = "json_schema",
   Kotlin = "kotlin",
+  Java = "java",
   Rust = "rust",
 }
 
@@ -39,6 +40,11 @@ const typeOptions = [
     label: "Kotlin",
     value: Language.Kotlin,
     lang: "kotlin",
+  },
+  {
+    label: "Java",
+    value: Language.Java,
+    lang: "java",
   },
   {
     label: "Rust",
@@ -79,6 +85,11 @@ export const TypeModal = ({ opened, onClose }: ModalProps) => {
               const types = jtg.default(getJson());
               setType(gofmt.default(types.go));
             });
+          });
+        } else if (selectedType === Language.Java) {
+          import("src/lib/utils/jsonToJavaBean").then(jtg => {
+            const beanText = jtg.default(getJson());
+              setType(beanText);
           });
         } else {
           transformer({ value: getJson() }).then(setType);
