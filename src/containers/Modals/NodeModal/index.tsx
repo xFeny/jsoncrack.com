@@ -23,17 +23,17 @@ export const NodeModal = ({ opened, onClose }: ModalProps) => {
   const path = useGraph(state => state.selectedNode?.path || "");
 
   return (
-    <Modal title="Node Content" size="auto" opened={opened} onClose={onClose} centered>
+    <Modal title="节点内容" size="auto" opened={opened} onClose={onClose} centered>
       <Stack py="sm" gap="sm">
         <Stack gap="xs">
           <Text fz="xs" fw={500}>
-            Content
+          内容
           </Text>
           <ScrollArea.Autosize mah={250} maw={600}>
             <CodeHighlight code={nodeData} miw={350} maw={600} language="json" withCopyButton />
           </ScrollArea.Autosize>
         </Stack>
-        <Button
+        {/* <Button
           onClick={() => {
             setVisible("upgrade")(true);
             gaEvent("click_node_edit");
@@ -41,9 +41,9 @@ export const NodeModal = ({ opened, onClose }: ModalProps) => {
           rightSection={<VscLock strokeWidth={0.5} />}
         >
           Edit
-        </Button>
+        </Button> */}
         <Text fz="xs" fw={500}>
-          JSON Path
+        节点路径
         </Text>
         <ScrollArea.Autosize maw={600}>
           <CodeHighlight
@@ -51,8 +51,8 @@ export const NodeModal = ({ opened, onClose }: ModalProps) => {
             miw={350}
             mah={250}
             language="json"
-            copyLabel="Copy to clipboard"
-            copiedLabel="Copied to clipboard"
+            copyLabel="复制"
+            copiedLabel="复制成功"
             withCopyButton
           />
         </ScrollArea.Autosize>

@@ -111,7 +111,7 @@ export const BottomBar = () => {
                 <Flex align="center" gap={2}>
                   <VscError color="red" />
                   <Text c="red" fw={500} fz="xs">
-                    Invalid
+                  验证未通过
                   </Text>
                 </Flex>
               </Popover.Target>
@@ -122,7 +122,7 @@ export const BottomBar = () => {
           ) : (
             <Flex align="center" gap={2}>
               <VscCheck />
-              <Text size="xs">Valid</Text>
+              <Text size="xs">已验证</Text>
             </Flex>
           )}
         </StyledBottomBarItem>
@@ -133,17 +133,17 @@ export const BottomBar = () => {
           }}
         >
           {liveTransformEnabled ? <VscSync /> : <VscSyncIgnored />}
-          <Text fz="xs">Live Transform</Text>
+          <Text fz="xs">自动转换</Text>
         </StyledBottomBarItem>
         {!liveTransformEnabled && (
           <StyledBottomBarItem onClick={() => setContents({})} disabled={!!error}>
             <VscRunAll />
-            Click to Transform
+            点击转换
           </StyledBottomBarItem>
         )}
       </StyledLeft>
 
-      <StyledRight>
+      {/* <StyledRight>
         <StyledBottomBarItem>Nodes: {nodeCount}</StyledBottomBarItem>
         <Link href="https://github.com/AykutSarac/jsoncrack.com/discussions" target="_blank">
           <StyledBottomBarItem>
@@ -151,7 +151,7 @@ export const BottomBar = () => {
             Feedback
           </StyledBottomBarItem>
         </Link>
-      </StyledRight>
+      </StyledRight> */}
     </StyledBottomBar>
   );
 };

@@ -91,7 +91,7 @@ export const Toolbar = ({ isWidget = false }: ToolbarProps) => {
         </Group>
       )}
       <Group gap="xs" justify="right" w="100%" style={{ flexWrap: "nowrap" }}>
-        {!isWidget && (
+        {/* {!isWidget && (
           <StyledToolElement onClick={() => setVisible("upgrade")(true)} $highlight>
             <Flex align="center" gap="6">
               <LuCrown size="16" />
@@ -100,16 +100,16 @@ export const Toolbar = ({ isWidget = false }: ToolbarProps) => {
               </Text>
             </Flex>
           </StyledToolElement>
-        )}
+        )} */}
 
         <SearchInput />
         {!isWidget && (
           <>
-            <StyledToolElement title="Save as Image" onClick={() => setVisible("download")(true)}>
+            <StyledToolElement title="保存为图片" onClick={() => setVisible("download")(true)}>
               <FiDownload size="18" />
             </StyledToolElement>
             <ZoomMenu />
-            <AccountMenu />
+            {/* <AccountMenu /> */}
             <OptionsMenu />
             <StyledToolElement title="Fullscreen" $hide={isWidget} onClick={fullscreenBrowser}>
               <AiOutlineFullscreen size="18" />

@@ -51,7 +51,7 @@ export const ToolsMenu = () => {
       <Menu.Target>
         <StyledToolElement onClick={() => gaEvent("show_tools_menu")}>
           <Flex align="center" gap={3}>
-            Tools <CgChevronDown />
+            工具 <CgChevronDown />
           </Flex>
         </StyledToolElement>
       </Menu.Target>
@@ -95,7 +95,7 @@ export const ToolsMenu = () => {
             gaEvent("open_jwt_modal");
           }}
         >
-          Decode JWT
+          解码 JWT
         </Menu.Item>
         <Menu.Item
           fz={12}
@@ -105,9 +105,9 @@ export const ToolsMenu = () => {
             gaEvent("open_type_modal");
           }}
         >
-          Generate Type
+          生成类型
         </Menu.Item>
-        <Menu.Item fz={12} leftSection={<FaRandom />} onClick={randomizeData}>
+        {/* <Menu.Item fz={12} leftSection={<FaRandom />} onClick={randomizeData}>
           Randomize Data
         </Menu.Item>
         <Menu.Item
@@ -142,7 +142,7 @@ export const ToolsMenu = () => {
           }}
         >
           Compare Data
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu.Dropdown>
     </Menu>
   );

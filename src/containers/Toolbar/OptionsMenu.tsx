@@ -41,7 +41,7 @@ export const OptionsMenu = () => {
             gaEvent("toggle_rulers", { label: rulersEnabled ? "on" : "off" });
           }}
         >
-          <Text size="xs">Rulers</Text>
+          <Text size="xs">标尺</Text>
         </Menu.Item>
         <Menu.Item
           leftSection={<BsCheck2 opacity={gesturesEnabled ? 100 : 0} />}
@@ -50,7 +50,7 @@ export const OptionsMenu = () => {
             gaEvent("toggle_gestures", { label: gesturesEnabled ? "on" : "off" });
           }}
         >
-          <Text size="xs">Trackpad Gestures</Text>
+          <Text size="xs">触控板手势</Text>
         </Menu.Item>
         <Menu.Item
           leftSection={<BsCheck2 opacity={childrenCountVisible ? 100 : 0} />}
@@ -59,7 +59,7 @@ export const OptionsMenu = () => {
             gaEvent("toggle_children_count", { label: childrenCountVisible ? "on" : "off" });
           }}
         >
-          <Text size="xs">Item Count</Text>
+          <Text size="xs">节点数量</Text>
         </Menu.Item>
         <Menu.Item
           leftSection={<BsCheck2 opacity={imagePreviewEnabled ? 100 : 0} />}
@@ -68,7 +68,7 @@ export const OptionsMenu = () => {
             gaEvent("toggle_image_preview", { label: imagePreviewEnabled ? "on" : "off" });
           }}
         >
-          <Text size="xs">Image Link Preview</Text>
+          <Text size="xs">图片链接预览</Text>
         </Menu.Item>
         <Menu.Item
           leftSection={<BsCheck2 opacity={collapseButtonVisible ? 100 : 0} />}
@@ -77,7 +77,7 @@ export const OptionsMenu = () => {
             gaEvent("toggle_expand_collapse", { label: collapseButtonVisible ? "on" : "off" });
           }}
         >
-          <Text size="xs">Show Expand/Collapse</Text>
+          <Text size="xs">显示 展开/折叠</Text>
         </Menu.Item>
         <Menu.Item
           leftSection={<BsCheck2 opacity={darkmodeEnabled ? 100 : 0} />}
@@ -86,15 +86,15 @@ export const OptionsMenu = () => {
             gaEvent("toggle_dark_mode", { label: darkmodeEnabled ? "on" : "off" });
           }}
         >
-          <Text size="xs">Dark Mode</Text>
+          <Text size="xs">深色模式</Text>
         </Menu.Item>
-        <Menu.Item
+        {/* <Menu.Item
           closeMenuOnClick
           leftSection={<VscLock />}
           onClick={() => setVisible("upgrade")(true)}
         >
           <Text size="xs">Customize Graph Colors</Text>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu.Dropdown>
     </Menu>
   );
