@@ -1,155 +1,109 @@
-<!-- PROJECT LOGO -->
-<p align="center">
-  <a href="https://github.com/AykutSarac/jsoncrack.com">
-   <img src="./public/assets/logo.svg" height="50" alt="Logo">
-  </a>
+forked from [AykutSarac/jsoncrack.com](https://github.com/AykutSarac/jsoncrack.com)
 
-  <h1 align="center">JSON Crack</h1>
+修改可见内容为中文，修改默认页即为JSON Crack Editor，删除需要升级才能使用的操作
 
-  <p align="center">
-    The open-source JSON Editor.
-    <br />
-    <a href="https://jsoncrack.com"><strong>Learn more »</strong></a>
-    <br />
-    <br />
-    <a href="https://todiagram.com">ToDiagram</a>
-    ·
-    <a href="https://discord.gg/yVyTtCRueq">Discord</a>
-    ·
-    <a href="https://jsoncrack.com">Website</a>
-    ·
-    <a href="https://github.com/AykutSarac/jsoncrack.com/issues">Issues</a>
-    ·
-    <a href="https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode">VS Code</a>
-  </p>
-</p>
 
-<!-- ABOUT THE PROJECT -->
-
-## About the Project
-
-<img width="100%" alt="booking-screen" src="./public/assets/compare/free.webp">
-
-## Visualize JSON into interactive graphs
-
-JSON Crack is a free, open-source data visualization app capable of visualizing data formats such as JSON, YAML, XML, CSV and more, into interactive graphs. With its intuitive and user-friendly interface, JSON Crack makes it easy to explore, analyze, and understand even the most complex data structures. Whether you're a developer working on a large-scale project or a data enthusiast looking to uncover hidden insights, JSON Crack has the tools and features you need to unlock the full potential of your data.
-
-- **Visualizer/Viewer**: Transform your data into interactive graphs or trees as you type in dark & light modes. Supports JSON, YAML, CSV, XML, and TOML.
-- **Convert**: Convert JSON to CSV, YAML to JSON, XML to JSON, and more. Our JSON converter supports multiple formats for easy data exchange.
-- **Format & Validate**: Format and beautify your JSON data to make it more readable. Validate JSON, YAML, and CSV.
-- **Generate Code**: Generate TypeScript interface, Golang structs, JSON Schema and more.
-- **JSON Schema**: Generate JSON Schema, create mock data, and validate JSON Schema from various data formats like JSON, YAML, XML, and CSV.
-- **Advanced JSON Tools**: Decode JWT, randomize data, execute jq (JSON Query), json path commands.
-- **Download Image**: Export image of the graph as PNG, JPEG, or SVG. Share your data visualization with others.
-- **Secure**: Your data is never stored on our servers. Everything happens on your device.
-
-## Recognition
-
-<a href="https://news.ycombinator.com/item?id=32626873">
-  <img
-    style="width: 250px; height: 54px;" width="250" height="54"
-    alt="Featured on Hacker News"
-    src="https://hackernews-badge.vercel.app/api?id=32626873"
-  />
-</a>
-
-<a href="https://producthunt.com/posts/JSON-Crack?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-jsoncrack" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=332281&theme=light" alt="JSON Crack | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-
-### Built With
-
-- [Next.js](https://nextjs.org/?ref=jsoncrack.com)
-- [React.js](https://reactjs.org/?ref=jsoncrack.com)
-- [Reaflow](https://reaflow.dev/?ref=jsoncrack.com)
-- [Monaco Editor](https://github.com/suren-atoyan/monaco-react)
-
-## Stay Up-to-Date
-
-JSON Crack officially launched as v1.0 on the 17th of February 2022 and we've come a long way so far. Watch **releases** of this repository to be notified of future updates:
-
-<a href="https://github.com/AykutSarac/jsoncrack.com"><img src="https://img.shields.io/github/stars/AykutSarac/jsoncrack.com" alt="Star at GitHub" /></a>
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## 开始
 
-To get a local copy up and running, please follow these simple steps.
+### 前提
 
-### Prerequisites
-
-Here is what you need to be able to run JSON Crack.
+以下是运行 JSON Crack 所需的环境。
 
 - Node.js (Version: >=18.x)
-- Pnpm _(recommended)_
+- Pnpm _(推荐)_
 
 
-## Development
+## 开发
 
-### Setup
+### 步骤
 
-1. Clone the repo into a public GitHub repository (or fork https://github.com/AykutSarac/jsoncrack.com/fork). If you plan to distribute the code, read the `LICENSE` for additional details.
+1. 克隆项目
 
    ```sh
-   git clone https://github.com/AykutSarac/jsoncrack.com.git
+   git clone https://github.com/xFeny/jsoncrack.com.git
    ```
 
-2. Go to the project folder
+2. 转到项目文件夹
 
    ```sh
    cd jsoncrack.com
    ```
 
-3. Install packages with yarn
+3. 安装软件包
 
    ```sh
    pnpm install
    ```
 
-4. Run the project
+4. 运行项目
 
    ```sh
    pnpm dev
-
+   
    # Running on http://localhost:3000/
    ```
 
-### Docker
+### Docker 部署
 
-🐳 A [`Dockerfile`](Dockerfile) is provided in the root of the repository.
-If you want to run JSON Crack locally:
+在项目根目录有一个🐳 [`Dockerfile`](Dockerfile) 。
+如果您想在本地运行 JSON Crack:
 
 ```console
-# Build a Docker image with:
+# 创建 Docker 镜像:
 docker build -t jsoncrack .
 
-# Run locally with `docker run`
+# 本地运行 `docker run`
 docker run -p 8888:8080 jsoncrack
 
-# Run locally with `docker-compose`
+# 本地运行 `docker-compose`
 docker-compose up -d
 
-# Go to http://localhost:8888
+# 打开 http://localhost:8888
 ```
 
-<!-- CONTRIBUTING -->
+#### Vercel 部署
 
-## Contributing
+打开[vercel.com](https://vercel.com/)网站
 
-Please see our [contributing guide](/CONTRIBUTING.md).
+<img src="http://oss.feny.ink/blogs/images/202410111629956.png" alt="image-20241011162914830" style="zoom:50%;" /> 
 
-### Good First Issues
+点击右上角的`Lon In`进行登录
 
-We have a list of [help wanted](https://github.com/AykutSarac/jsoncrack.com/issues?q=is:issue+is:open+label:%22%F0%9F%99%8B%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8Fhelp+wanted%22) that contain small features and bugs which have a relatively limited scope. This is a great place to get started, gain experience, and get familiar with our contribution process.
+<img src="http://oss.feny.ink/blogs/images/202410111631986.png" alt="image-20241011163118943" style="zoom:50%;" /> 
 
-<!-- CONTRIBUTORS -->
+使用GitHub进行登录
 
-### Contributors
+#### 关联 github 仓库
 
-<a href="https://github.com/AykutSarac/jsoncrack.com/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=AykutSarac/jsoncrack.com" />
-</a>
+点击 Add new 按钮，选择 Project 新建一个项目
 
-<!-- LICENSE -->
+<img src="http://oss.feny.ink/blogs/images/202410111633738.png" alt="image-20241011163348687" style="zoom:50%;" /> 
 
-## License
+选择 github 中需要部署的仓库，点击 Import
 
-See  [`LICENSE`](/LICENSE) for more information.
+<img src="http://oss.feny.ink/blogs/images/202410111634347.png" alt="image-20241011163454280" style="zoom:50%;" /> 
+
+点击 Deploy，等待build完成
+
+<img src="http://oss.feny.ink/blogs/images/202410111636734.png" alt="image-20241011163639665" style="zoom:50%;" /> 
+
+在个人主页可以看到
+
+<img src="http://oss.feny.ink/blogs/images/202410111638141.png" alt="image-20241011163803097" style="zoom:50%;" /> 
+
+点击进去看详情
+
+<img src="http://oss.feny.ink/blogs/images/202410111639656.png" alt="image-20241011163951578" style="zoom:50%;" /> 
+
+## 问题
+
+国内访问Vercel自带的`.vercel.app`地址会打不开，要翻墙才能访问
+
+### 解决办法
+
+如果有域名在`Setting`中设置为自己的域名即可解决访问问题
+
+<img src="http://oss.feny.ink/blogs/images/202410111644436.png" alt="image-20241011164452334" style="zoom:50%;" /> 
