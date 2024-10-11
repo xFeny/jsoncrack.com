@@ -31,7 +31,7 @@ export const JWTModal = ({ opened, onClose }: ModalProps) => {
       />
       <Group mt="xs" justify="right">
         <Button onClick={resolve} disabled={!token}>
-        解码
+          解码
         </Button>
       </Group>
     </Modal>

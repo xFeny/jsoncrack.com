@@ -1,6 +1,6 @@
 import React from "react";
 import type { ModalProps } from "@mantine/core";
-import { Modal, Stack, Text, ScrollArea, Button } from "@mantine/core";
+import { Modal, Stack, Text, ScrollArea } from "@mantine/core";
 import { CodeHighlight } from "@mantine/code-highlight";
 import useGraph from "src/containers/Editor/components/views/GraphView/stores/useGraph";
 import useModal from "src/store/useModal";
