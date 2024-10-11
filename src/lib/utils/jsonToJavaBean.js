@@ -72,7 +72,7 @@ function toBeanText(bean, packageName) {
   var shoudImportJackson = false;
 
   //依次遍历每个属性
-  for (let key in beanFields) {
+  for (const key in beanFields) {
     //如果存在下划线小写格式的属性名，要改成驼峰命名
     var camelKey = camelCase(key);
     if (camelKey != key) {
@@ -94,7 +94,7 @@ function toBeanText(bean, packageName) {
   }
 
   //生成import语句
-  for (let t in typeSet) {
+  for (const t in typeSet) {
     if (importMap[t]) {
       importText += "import " + importMap[t] + ";\n";
     }
@@ -136,7 +136,9 @@ function getBeanFieldFromJson(text, className, type, typeCase) {
   text = trimStr(text);
   try {
     jsonlint.parse(text);
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 
   if (text[0] === "[" && text[text.length - 1] === "]") {
     text = '{ "list": ' + text + "}";
@@ -149,7 +151,7 @@ function getBeanFieldFromJson(text, className, type, typeCase) {
   //2.将json对象转换成bean类
   var bean = {};
   var attrClassAry = [];
-  for (let key in jsonObject) {
+  for (const key in jsonObject) {
     var val = jsonObject[key];
     var newKey = key;
     switch (type) {
@@ -272,7 +274,7 @@ function getTypeFromJsonVal(val, key, attrClassAry, type, typeCase) {
 function jsonToJavaBean(json, packageName = "ink.feny") {
   const beanField = getBeanFieldFromJson(json);
   const bean = [];
-  for (let key in beanField) {
+  for (const key in beanField) {
     bean.push(toBeanText(beanField[key], packageName));
   }
   return bean.join("\n\n");

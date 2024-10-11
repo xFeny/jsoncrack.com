@@ -89,7 +89,7 @@ export const TypeModal = ({ opened, onClose }: ModalProps) => {
         } else if (selectedType === Language.Java) {
           import("src/lib/utils/jsonToJavaBean").then(jtg => {
             const beanText = jtg.default(getJson());
-              setType(beanText);
+            setType(beanText);
           });
         } else {
           transformer({ value: getJson() }).then(setType);
