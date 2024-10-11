@@ -77,7 +77,7 @@ const WidgetPage = () => {
   const View = () => {
     const viewMode = useConfig(state => state.viewMode);
 
-    if (viewMode === ViewMode.Graph) return <GraphView />;
+    if (viewMode === ViewMode.Graph) return <GraphView isWidget />;
     if (viewMode === ViewMode.Tree) return <TreeView />;
     return null;
   };
