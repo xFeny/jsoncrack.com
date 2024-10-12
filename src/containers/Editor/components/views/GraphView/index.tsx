@@ -84,6 +84,8 @@ const GraphCanvas = ({ isWidget }: GraphProps) => {
   const direction = useGraph(state => state.direction);
   const nodes = useGraph(state => state.nodes);
   const edges = useGraph(state => state.edges);
+  const focusSecondNode = useGraph(state => state.focusSecondNode);
+  const setZoomFactor = useGraph(state => state.setZoomFactor);
   const [paneWidth, setPaneWidth] = React.useState(2000);
   const [paneHeight, setPaneHeight] = React.useState(2000);
 
@@ -99,13 +101,27 @@ const GraphCanvas = ({ isWidget }: GraphProps) => {
         setTimeout(() => {
           validateHiddenNodes();
           window.requestAnimationFrame(() => {
-            if (changeRatio > 70 || isWidget) centerView();
-            setLoading(false);
+            // if (changeRatio > 70 || isWidget) centerView();
+            // JSON大数据时聚焦于水平第二个节点，并放大90%
+            setTimeout(() => {
+              focusSecondNode();
+              setZoomFactor(90 / 100);
+              setLoading(false);
+            }, 500);
           });
         });
       }
     },
-    [isWidget, paneHeight, paneWidth, centerView, setLoading, validateHiddenNodes]
+    [
+      isWidget,
+      paneHeight,
+      paneWidth,
+      centerView,
+      setLoading,
+      validateHiddenNodes,
+      focusSecondNode,
+      setZoomFactor,
+    ]
   );
 
   return (
