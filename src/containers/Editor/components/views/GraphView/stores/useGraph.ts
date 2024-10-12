@@ -218,20 +218,20 @@ const useGraph = create<Graph & GraphActions>((set, get) => ({
     const { translateY: minTranslateY } = parseTransform(transform);
     const nodeHeight = parseFloat(rootNode.querySelector("rect")?.getAttribute("height") ?? "0");
     const maxTranslateY = minTranslateY + nodeHeight;
-    const allNodes = document.querySelectorAll("g[id*='node-']");
+    const allNodes = document.querySelectorAll("path[class*='_path_v5z62_8']");
 
     const cen: Element[] = [];
     allNodes.forEach(node => {
-      const stys = window.getComputedStyle(node);
-      const trans = stys?.getPropertyValue("transform");
-      const { translateY } = parseTransform(trans);
+      const d = node.getAttribute("d");
+      const translateY = parseInt(d?.substring(d.lastIndexOf(",") + 1) ?? "0");
       if (translateY > minTranslateY && translateY < maxTranslateY) {
         cen.push(node);
       }
     });
 
+    console.log(cen);
     if (cen.length > 2) {
-      get().viewPort?.camera?.centerFitElementIntoView(cen[0] as HTMLElement, {
+      get().viewPort?.camera?.centerFitElementIntoView(cen[1] as HTMLElement, {
         elementExtraMarginForZoom: 100,
       });
     } else {
