@@ -92,7 +92,7 @@ const GraphCanvas = ({ isWidget }: GraphProps) => {
   const onLayoutChange = React.useCallback(
     (layout: ElkRoot) => {
       if (layout.width && layout.height) {
-        const areaSize = layout.width * layout.height;
+        // const areaSize = layout.width * layout.height;
         // const changeRatio = Math.abs((areaSize * 100) / (paneWidth * paneHeight) - 100);
 
         setPaneWidth(layout.width + 50);
