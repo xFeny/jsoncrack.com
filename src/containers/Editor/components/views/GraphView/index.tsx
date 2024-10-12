@@ -105,7 +105,7 @@ const GraphCanvas = ({ isWidget }: GraphProps) => {
             // JSON大数据时聚焦于水平第二个节点，并放大90%
             setTimeout(() => {
               focusSecondNode();
-              setZoomFactor(90 / 100);
+              setZoomFactor(70 / 100);
               setLoading(false);
             }, 500);
           });
