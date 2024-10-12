@@ -215,7 +215,7 @@ const useGraph = create<Graph & GraphActions>((set, get) => ({
     const rootNode = document.querySelector("g[id*='node-1']") as HTMLElement;
     const styles = window.getComputedStyle(rootNode);
     const transform = styles?.getPropertyValue("transform");
-    let { translateY: minTranslateY } = parseTransform(transform);
+    const { translateY: minTranslateY } = parseTransform(transform);
     const nodeHeight = parseFloat(rootNode.querySelector("rect")?.getAttribute("height") ?? "0");
     const maxTranslateY = minTranslateY + nodeHeight;
     const allNodes = document.querySelectorAll("g[id*='node-']");
