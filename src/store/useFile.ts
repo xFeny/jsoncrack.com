@@ -3,6 +3,7 @@ import debounce from "lodash.debounce";
 import { event as gaEvent } from "nextjs-google-analytics";
 import { toast } from "react-hot-toast";
 import { create } from "zustand";
+import { ONLINE_HTTP } from "src/constants/onlineHttp";
 import { FileFormat } from "src/enums/file.enum";
 import { isIframe } from "src/lib/utils/helpers";
 import { contentToJson, jsonToContent } from "src/lib/utils/jsonAdapter";
@@ -167,15 +168,7 @@ const useFile = create<FileStates & JsonActions>()((set, get) => ({
   setHasChanges: hasChanges => set({ hasChanges }),
   fetchUrl: async url => {
     try {
-      const res = await axios.post(
-        "https://fetch-api.feny.ink/httpRequest",
-        { url: url },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const res = await axios.post(ONLINE_HTTP, { url });
       const jsonStr = JSON.stringify(res.data, null, 2);
 
       get().setContents({ contents: jsonStr });

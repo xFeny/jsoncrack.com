@@ -231,7 +231,7 @@ const useGraph = create<Graph & GraphActions>((set, get) => ({
       }
     });
 
-    console.log(cen);
+    //console.log(cen);
     if (cen.length >= 2) {
       get().viewPort?.camera?.centerFitElementIntoView(cen[1] as HTMLElement, {
         elementExtraMarginForZoom: 100,

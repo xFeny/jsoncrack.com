@@ -2,9 +2,11 @@ import React from "react";
 import type { ModalProps } from "@mantine/core";
 import { Modal, Group, Button, TextInput, Stack, Paper, Text } from "@mantine/core";
 import { Dropzone } from "@mantine/dropzone";
+import axios from "axios";
 import { event as gaEvent } from "nextjs-google-analytics";
 import toast from "react-hot-toast";
 import { AiOutlineUpload } from "react-icons/ai";
+import { ONLINE_HTTP } from "src/constants/onlineHttp";
 import type { FileFormat } from "src/enums/file.enum";
 import useFile from "src/store/useFile";
 
@@ -22,8 +24,9 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
       toast.loading("Loading...", { id: "toastFetch" });
       gaEvent("fetch_url");
 
-      return fetch(url)
-        .then(res => res.json())
+      return axios
+        .post(ONLINE_HTTP, { url })
+        .then(res => res.data)
         .then(json => {
           setContents({ contents: JSON.stringify(json, null, 2) });
           onClose();
