@@ -214,13 +214,15 @@ const useGraph = create<Graph & GraphActions>((set, get) => ({
   focusSecondNode: () => {
     const rootNode = document.querySelector("g[id*='node-1']") as HTMLElement;
     const styles = window.getComputedStyle(rootNode);
+    // 第一个节点的水平区间
     const transform = styles?.getPropertyValue("transform");
     const { translateY: minTranslateY } = parseTransform(transform);
     const nodeHeight = parseFloat(rootNode.querySelector("rect")?.getAttribute("height") ?? "0");
     const maxTranslateY = minTranslateY + nodeHeight;
-    const allNodes = document.querySelectorAll("path[class*='_path_v5z62_8']");
 
+    // 获取和第一个节点在同一水平区间的节点
     const cen: Element[] = [];
+    const allNodes = document.querySelectorAll("path[class*='_path_v5z62_8']");
     allNodes.forEach(node => {
       const d = node.getAttribute("d");
       const translateY = parseInt(d?.substring(d.lastIndexOf(",") + 1) ?? "0");
@@ -230,13 +232,15 @@ const useGraph = create<Graph & GraphActions>((set, get) => ({
     });
 
     console.log(cen);
-    if (cen.length > 2) {
+    if (cen.length >= 2) {
       get().viewPort?.camera?.centerFitElementIntoView(cen[1] as HTMLElement, {
         elementExtraMarginForZoom: 100,
       });
-    } else {
-      get().centerView();
+      get().setZoomFactor(70 / 100);
+      return;
     }
+
+    get().centerView();
   },
   setZoomFactor: zoomFactor => {
     const viewPort = get().viewPort;

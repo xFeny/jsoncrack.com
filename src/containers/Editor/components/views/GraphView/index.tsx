@@ -102,12 +102,11 @@ const GraphCanvas = ({ isWidget }: GraphProps) => {
           validateHiddenNodes();
           window.requestAnimationFrame(() => {
             // if (changeRatio > 70 || isWidget) centerView();
-            // JSON大数据时聚焦于水平第二个节点，并放大90%
+            // 聚焦于水平第二个节点
             setTimeout(() => {
               focusSecondNode();
-              setZoomFactor(70 / 100);
               setLoading(false);
-            }, 500);
+            }, 1000);
           });
         });
       }
